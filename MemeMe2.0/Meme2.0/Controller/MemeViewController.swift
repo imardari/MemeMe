@@ -15,11 +15,13 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var navbar: UINavigationBar!
+    
+    var isEditMode = false
+    var memeToBeEdited: Meme!
     
     // Set the custom UI for our text
     var memeTextAttributes: [String : Any] = [
@@ -38,12 +40,19 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //If the phone doesn't have a camera the cameraButton will be dissabled
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
-        //Disable the shareButton and the cancelButton if there is no image yet
+        //Disable the shareButton if there is no image yet
         shareButton.isEnabled = imageView.image == nil ? false : true
-        cancelButton.isEnabled = imageView.image == nil ? false : true
         
         //Set the custom UI for both text fields
         configureTexFields(textAttribute: memeTextAttributes, textAlignment: .center)
+        
+        //If editMode == true, retrieve the image and the text
+        if isEditMode {
+            imageView.image = memeToBeEdited.oldImage
+            topText.text = memeToBeEdited.topText
+            bottomText.text = memeToBeEdited.bottomText
+            shareButton.isEnabled = true
+        }
     }
     
     //Don't forget to cleanup after youself :)
@@ -79,12 +88,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func settingsButtonPressed(_ sender: Any) {
         let settingsVC = storyboard?.instantiateViewController(withIdentifier: "pickerVC") as! SettingsViewController
         settingsVC.choosedFontDelegate = self
+        settingsVC.choosedColorDelegate = self
         present(settingsVC, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        let cleanVC = storyboard?.instantiateViewController(withIdentifier: "MemeVC")
-        show(cleanVC!, sender: self)
+        dismiss(animated: true, completion: nil)
     }
     
     //Group textField's UI and delegates in one method
@@ -151,7 +160,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         toolbar.isHidden = true
         navbar.isHidden = true
         
-        // Render view to an image
+        //Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -166,6 +175,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func save(memedImage: UIImage) {
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, oldImage: imageView.image!, memedImage: generateMemedImage())
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
     }
 }
 
@@ -181,7 +191,13 @@ extension MemeViewController: UITextFieldDelegate {
 
 //MARK: ChoosedFontDelegate methods
 
-extension MemeViewController: ChoosedFontDelegate {
+extension MemeViewController: ChoosedFontDelegate, ChoosedColorDelegate {
+    
+    func didSelectColor(color: String) {
+        memeTextAttributes.updateValue(color, forKey: NSAttributedStringKey.foregroundColor.rawValue)
+        print(color)
+    }
+    
     func didSelectFont(fontName: String) {
         memeTextAttributes.updateValue(UIFont(name: fontName, size: 40)!, forKey: NSAttributedStringKey.font.rawValue)
     }
