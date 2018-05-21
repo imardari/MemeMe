@@ -88,7 +88,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func settingsButtonPressed(_ sender: Any) {
         let settingsVC = storyboard?.instantiateViewController(withIdentifier: "pickerVC") as! SettingsViewController
         settingsVC.choosedFontDelegate = self
-        settingsVC.choosedColorDelegate = self
         present(settingsVC, animated: true, completion: nil)
     }
     
@@ -191,12 +190,7 @@ extension MemeViewController: UITextFieldDelegate {
 
 //MARK: ChoosedFontDelegate methods
 
-extension MemeViewController: ChoosedFontDelegate, ChoosedColorDelegate {
-    
-    func didSelectColor(color: String) {
-        memeTextAttributes.updateValue(color, forKey: NSAttributedStringKey.foregroundColor.rawValue)
-        print(color)
-    }
+extension MemeViewController: ChoosedFontDelegate {
     
     func didSelectFont(fontName: String) {
         memeTextAttributes.updateValue(UIFont(name: fontName, size: 40)!, forKey: NSAttributedStringKey.font.rawValue)

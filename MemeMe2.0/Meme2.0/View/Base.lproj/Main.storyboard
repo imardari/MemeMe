@@ -328,10 +328,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xt3-HM-rgd">
-                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="sVt-qA-Dvt"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Settings" id="J3z-0Q-28d">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="P2r-kA-xjV">
@@ -342,67 +339,41 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uuJ-bp-aDm">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="4jJ-nI-nGd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="291.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO6-ai-OJ1">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-Pr-iro">
-                                                <rect key="frame" x="0.0" y="29" width="375" height="262.5"/>
-                                            </pickerView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ScS-DZ-Zdn">
-                                        <rect key="frame" x="0.0" y="291.5" width="375" height="291.5"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-ru-GcI">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="291.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jg-Uz-fzV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-gk-EDE">
-                                                        <rect key="frame" x="0.0" y="24" width="375" height="267.5"/>
-                                                    </pickerView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO6-ai-OJ1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ibo-0l-eQy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-Pr-iro">
+                                <rect key="frame" x="0.0" y="124" width="375" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xt3-HM-rgd" firstAttribute="leading" secondItem="uuJ-bp-aDm" secondAttribute="leading" id="04N-Is-wZT"/>
-                            <constraint firstItem="uuJ-bp-aDm" firstAttribute="leading" secondItem="S05-RU-2FQ" secondAttribute="leading" id="248-5P-L6o"/>
-                            <constraint firstItem="S05-RU-2FQ" firstAttribute="bottom" secondItem="uuJ-bp-aDm" secondAttribute="bottom" id="G0Y-Ui-3gT"/>
-                            <constraint firstItem="S05-RU-2FQ" firstAttribute="trailing" secondItem="uuJ-bp-aDm" secondAttribute="trailing" id="bIZ-vP-7qm"/>
-                            <constraint firstItem="xt3-HM-rgd" firstAttribute="top" secondItem="S05-RU-2FQ" secondAttribute="top" constant="20" id="cxM-x7-LPn"/>
-                            <constraint firstItem="xt3-HM-rgd" firstAttribute="trailing" secondItem="uuJ-bp-aDm" secondAttribute="trailing" id="dyB-7W-jNL"/>
-                            <constraint firstItem="xt3-HM-rgd" firstAttribute="bottom" secondItem="uuJ-bp-aDm" secondAttribute="top" id="fKo-z4-8ri"/>
+                            <constraint firstItem="C2E-Pr-iro" firstAttribute="leading" secondItem="S05-RU-2FQ" secondAttribute="leading" id="657-0N-wVN"/>
+                            <constraint firstItem="xt3-HM-rgd" firstAttribute="trailing" secondItem="S05-RU-2FQ" secondAttribute="trailing" id="Af1-ym-h5S"/>
+                            <constraint firstItem="RO6-ai-OJ1" firstAttribute="top" secondItem="xt3-HM-rgd" secondAttribute="bottom" id="FDI-it-9Wg"/>
+                            <constraint firstItem="xt3-HM-rgd" firstAttribute="leading" secondItem="S05-RU-2FQ" secondAttribute="leading" id="L54-Je-Bxa"/>
+                            <constraint firstItem="xt3-HM-rgd" firstAttribute="top" secondItem="S05-RU-2FQ" secondAttribute="top" id="Q6e-k4-A1M"/>
+                            <constraint firstItem="RO6-ai-OJ1" firstAttribute="trailing" secondItem="S05-RU-2FQ" secondAttribute="trailing" id="RY7-2Y-dAD"/>
+                            <constraint firstItem="C2E-Pr-iro" firstAttribute="top" secondItem="RO6-ai-OJ1" secondAttribute="bottom" constant="16" id="apx-sA-1kO"/>
+                            <constraint firstItem="RO6-ai-OJ1" firstAttribute="leading" secondItem="S05-RU-2FQ" secondAttribute="leading" id="pJc-Xw-50b"/>
+                            <constraint firstItem="C2E-Pr-iro" firstAttribute="trailing" secondItem="S05-RU-2FQ" secondAttribute="trailing" id="w59-yt-hbU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S05-RU-2FQ"/>
                     </view>
                     <connections>
-                        <outlet property="colorPicker" destination="XXp-gk-EDE" id="H8O-3Z-Pbe"/>
                         <outlet property="picker" destination="C2E-Pr-iro" id="iQh-JD-1MC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIX-2S-r2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3887" y="139"/>
+            <point key="canvasLocation" x="3885.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--View Meme View Controller-->
         <scene sceneID="kIR-hO-d4z">
@@ -418,7 +389,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhq-zn-sgr">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="R4M-ob-PSe">
+                                    <navigationItem title="Meme Editor" id="R4M-ob-PSe">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="XPD-uX-2W7">
                                             <connections>
                                                 <action selector="editButtonPressed:" destination="9DO-dF-Bt0" id="ZcM-Sr-5ua"/>
@@ -455,6 +426,6 @@
         <image name="tableView" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="95E-Mb-dK6"/>
+        <segue reference="cBC-oN-K8h"/>
     </inferredMetricsTieBreakers>
 </document>

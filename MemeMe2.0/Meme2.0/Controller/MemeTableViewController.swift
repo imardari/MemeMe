@@ -17,7 +17,7 @@ class MemeTableViewController: UITableViewController {
         memes = appDelegate.memes
         tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +48,8 @@ class MemeTableViewController: UITableViewController {
 
         let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
         swipeActionConfig.performsFirstActionWithFullSwipe = true
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.remove(at: indexPath.row)
         return swipeActionConfig
     }
 
