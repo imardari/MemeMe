@@ -16,6 +16,7 @@ class ViewMemeViewController: UIViewController {
     var didEdit: Bool!
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         tabBarController?.tabBar.isHidden = true
         
         if didEdit {
@@ -25,6 +26,7 @@ class ViewMemeViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         tabBarController?.tabBar.isHidden = false
     }
     

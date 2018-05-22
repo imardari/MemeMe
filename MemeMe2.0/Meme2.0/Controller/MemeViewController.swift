@@ -34,6 +34,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //MARK: View methods
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         //Subscribe to keyboard notifications
         subscribeToKeyboardNotifications()
         
@@ -57,6 +58,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //Don't forget to cleanup after youself :)
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         unsubscribeFromKeyboardNotification()
     }
     

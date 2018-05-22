@@ -15,7 +15,7 @@ class MemeTableViewCell: UITableViewCell {
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     
-    override func layoutSubviews() {
+    override func setNeedsLayout() {
         memeIcon.contentMode = UIViewContentMode.scaleAspectFill
         memeIcon.layer.cornerRadius = memeIcon.frame.size.width/2
         memeIcon.clipsToBounds = true
