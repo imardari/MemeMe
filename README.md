@@ -1,3 +1,3 @@
-# Pitch Perfect
+# MemeMe
 
-This app allows users to record their voice and play it back with fun sound effects, such as fast or slow playback, echo or reverb, and also make you sound like chipmunk or Darth Vader :)
+Create a unique meme by taking a picture or selecting an existing one from the photo library. Add custom text to the top and the bottom of the picture. Now share the meme with your friends via sms or social media!
