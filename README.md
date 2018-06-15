@@ -6,10 +6,10 @@ MemeMe is an app that you can use to create... you guessed it, Memes! :)
 
 <ul>
   <li>Take a photo using your camera</li>
-  <li>Use an existing picture from you album library</li>
+  <li>Use an existing photo from your photo library</li>
   <li>Add custom text to the top and the bottom of the photo</li>
   <li>Share the newly created meme with your friends and family via sms or social media</li>
-  <li>Save the newly created meme to your album library</li>
+  <li>Save the newly created meme to your photo library</li>
   <li>Chose from variety of fonts that best suit your meme</li>
 </ul>
  
