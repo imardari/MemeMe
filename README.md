@@ -2,10 +2,6 @@
 
 MemeMe is an app that you can use to create... you guessed it, Memes! :)
 
-## How it works
-
-Once the app launches it finds your current location and displays the temperature along with great graphics that indicate whether it's a sunny or a rainy weather, etc.
-
 ## Features
 
 <ul>
