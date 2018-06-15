@@ -11,6 +11,7 @@ MemeMe is an app that you can use to create... you guessed it, Memes! :)
   <li>Share the newly created meme with your friends and family via sms or social media</li>
   <li>Save the newly created meme to your photo library</li>
   <li>Chose from variety of fonts that best suit your meme</li>
+  <li>View all of your memes in a collection or a table view</li>
 </ul>
  
 ## Requirements
